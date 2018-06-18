@@ -2,10 +2,11 @@ import java.util.Date;
 
 // Класс "Документ"
 
-public abstract class Document implements Comparable<Document>{
+public abstract class Document implements Comparable<Document> {
 	
 	// Что с типами
 	
+	// Исправить модификатор доступа
 	protected int id; // Идентификатор документа
 	protected String name; // Название документа
 	protected String text; // Текст документа
@@ -38,7 +39,7 @@ public abstract class Document implements Comparable<Document>{
 				+ ", Дата регистрации=" + dateRegistration + ", Автор=" + author + "]";
 	}
 
-	private int getId() {
+	public int getId() {
 		return id;
 	}
 
