@@ -1,15 +1,16 @@
 import java.util.Date;
 
-//Класс "Поручение"
+// РєР»Р°СЃСЃ РџРѕСЂСѓС‡РµРЅРёРµ
 
 public class Task  extends Document {
 	
-	// Что с типами?
-	
-	private Date dateIssue; // Дата выдачи поручения
-	private int termExecutionOfInstructions; // срок испольнения поручения
-	private String responsibleExecutor; // ответственный испольнитель
-	private String signOfContentity; //признак контрольности
+	// Р§С‚Рѕ СЃ С‚РёРїР°РјРё?
+
+	private Date dateIssue; // Р”Р°С‚Р° РІС‹РґР°С‡Рё РїРѕСЂСѓС‡РµРЅРёСЏ
+	private int termExecutionOfInstructions; // РЎСЂРѕРє РёСЃРїРѕР»РЅРµРЅРёСЏ РїРѕСЂСѓС‡РµРЅРёСЏ
+	private String responsibleExecutor; // РћС‚РІРµС‚СЃС‚РІРµРЅРЅС‹Р№ РёСЃРїРѕР»РЅРёС‚РµР»СЊ
+	private String signOfContentity; // РџСЂРёР·РЅР°Рє РєРѕРЅС‚СЂРѕР»СЊРЅРѕСЃС‚Рё
+	private String orderController; // РљРѕРЅС‚СЂРѕР»РµСЂ РїРѕСЂСѓС‡РµРЅРёСЏ
 	
 	
 	public int compareTo(Document arg0) {

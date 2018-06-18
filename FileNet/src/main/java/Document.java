@@ -12,7 +12,7 @@ public abstract class Document implements Comparable<Document>{
 	protected int registrationNumber; // Регистрационный номер документа
 	protected Date dateRegistration; // Дата регистрации документа
 	protected String author; // Автор документа
-	
+
 	// Сравниваем сначала по дате регистрации, а затем по регистрационному номеру
 	public int compareTo(Document doc) {
 		
@@ -85,5 +85,10 @@ public abstract class Document implements Comparable<Document>{
 	private void setAuthor(String author) {
 		this.author = author;
 	}
+	
+//	public Document(int reg, Date date) {
+//		this.registrationNumber = reg;
+//		this.dateRegistration = date;
+//	}
 
 }

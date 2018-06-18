@@ -1,11 +1,12 @@
+import java.util.Date;
 
-// класс "Исходящий документ"
+// РљР»Р°СЃСЃ "РСЃС…РѕРґСЏС‰РёР№ РґРѕРєСѓРјРµРЅС‚" 
 
-public class Outgoing extends Task{
+public class Outgoing extends Document{
 	
-	// Что с типами?
+	// Р§С‚Рѕ СЃ С‚РёРїР°РјРё?
 	
-	private String addresser; // адресат
-	private String deliverymethod; //Способ доставки
+	private String addresser; // РђРґСЂРµСЃР°С‚
+	private String deliverymethod; // РЎРїРѕСЃРѕР± РґРѕСЃС‚Р°РІРєРё
 	
 }
