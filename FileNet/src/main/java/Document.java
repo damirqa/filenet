@@ -1,16 +1,89 @@
 import java.util.Date;
 
-// Класс "документ"
+// РљР»Р°СЃСЃ "Р”РѕРєСѓРјРµРЅС‚"
 
 public abstract class Document implements Comparable<Document>{
 	
-	// Что с типами?
+	// Р§С‚Рѕ СЃ С‚РёРїР°РјРё
 	
-	private int id; // идентификатор документа
-	private String name; // название докумениа
-	private String text; // текст документа
-	private int registrationNumber; // регистрационный номер документа
-	private Date dateRegistration; // Дата регистрации документа
-	private String author; //автор документа
+	protected int id; // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РґРѕРєСѓРјРµРЅС‚Р°
+	protected String name; // РќР°Р·РІР°РЅРёРµ РґРѕРєСѓРјРµРЅС‚Р°
+	protected String text; // РўРµРєСЃС‚ РґРѕРєСѓРјРµРЅС‚Р°
+	protected int registrationNumber; // Р РµРіРёСЃС‚СЂР°С†РёРѕРЅРЅС‹Р№ РЅРѕРјРµСЂ РґРѕРєСѓРјРµРЅС‚Р°
+	protected Date dateRegistration; // Р”Р°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРё РґРѕРєСѓРјРµРЅС‚Р°
+	protected String author; // РђРІС‚РѕСЂ РґРѕРєСѓРјРµРЅС‚Р°
+	
+	// РЎСЂР°РІРЅРёРІР°РµРј СЃРЅР°С‡Р°Р»Р° РїРѕ РґР°С‚Рµ СЂРµРіРёСЃС‚СЂР°С†РёРё, Р° Р·Р°С‚РµРј РїРѕ СЂРµРіРёСЃС‚СЂР°С†РёРѕРЅРЅРѕРјСѓ РЅРѕРјРµСЂСѓ
+	public int compareTo(Document doc) {
+		
+		Document document = (Document) doc;
+		
+		int result = dateRegistration.compareTo(document.getDateRegistration());
+		
+		if (result != 0) {
+			return result;
+		}
+		
+		result = getRegistrationNumber() - document.getRegistrationNumber();
+		
+		if (result != 0) {
+			return (int) result / Math.abs(result);
+		}
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Р”РѕРєСѓРјРµРЅС‚ [ID=" + id + ", РќР°Р·РІР°РЅРёРµ=" + name + ", Р РµРіРёСЃС‚СЂР°С†РёРѕРЅРЅС‹Р№ РЅРѕРјРµСЂ=" + registrationNumber
+				+ ", Р”Р°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРё=" + dateRegistration + ", РђРІС‚РѕСЂ=" + author + "]";
+	}
+
+	private int getId() {
+		return id;
+	}
+
+	private void setId(int id) {
+		this.id = id;
+	}
+
+	private String getName() {
+		return name;
+	}
+
+	private void setName(String name) {
+		this.name = name;
+	}
+
+	private String getText() {
+		return text;
+	}
+
+	private void setText(String text) {
+		this.text = text;
+	}
+
+	private int getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+	private void setRegistrationNumber(int registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+
+	private Date getDateRegistration() {
+		return dateRegistration;
+	}
+
+	private void setDateRegistration(Date dateRegistration) {
+		this.dateRegistration = dateRegistration;
+	}
+
+	private String getAuthor() {
+		return author;
+	}
+
+	private void setAuthor(String author) {
+		this.author = author;
+	}
 
 }

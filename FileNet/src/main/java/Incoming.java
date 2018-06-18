@@ -1,22 +1,15 @@
 import java.util.Date;
 
-// Класс "Входящий документ"
+// пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 
 public class Incoming extends Document{
 	
-	// Что с типами
+	// пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-	private String addresser; // адресат
-	private String addressee; // получатель
-	private int outgoingNumber; // исходящий номер
-	private Date outgoingRegistrationDate; // исходяшая дата регистрации
-	
-	
-	public int compareTo(Document o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
+	private String addresser; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	private String addressee; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	private int outgoingNumber; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+	private Date outgoingRegistrationDate; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	
 	
 }
