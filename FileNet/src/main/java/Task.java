@@ -12,18 +12,28 @@ public class Task  extends Document {
 	private String signOfContentity; // Признак контрольности
 	private String orderController; // Контролер поручения
 	
+	public Task(String name, String text, int registrationNumber, Date dateRegistration, String author,
+			Date dateIssue, int termExecutionOfInstructions, String responsibleExecutor, String signOfContentity, String orderController) {
+		
+		setName(name);
+		setText(text);
+		setRegistrationNumber(registrationNumber);
+		setDateRegistration(dateRegistration);
+		setAuthor(author);
+		
+		this.dateIssue = dateIssue;
+		this.termExecutionOfInstructions = termExecutionOfInstructions;
+		this.responsibleExecutor = responsibleExecutor;
+		this.signOfContentity = signOfContentity;
+		this.orderController = orderController;
+		
+	}
+
 	@Override
 	public String toString() {
 		return "Поручение [Дата выдачи поручения=" + dateIssue + ", Срок исполнения поручения=" + termExecutionOfInstructions
 				+ ", Ответственный исполнитель=" + responsibleExecutor + ", Признак контрольности=" + signOfContentity
-				+ ", Контролер поручения=" + orderController + ", ID=" + id + ", Название=" + name + ", Регистрационный номер="
-				+ registrationNumber + ", Автор=" + author + "]";
+				+ ", Контролер поручения=" + orderController + ", ID=" + getId() + ", Название=" + getName() + ", Регистрационный номер="
+				+ getRegistrationNumber() + ", Автор=" + getAuthor() + "]";
 	}
-
-
-	public int compareTo(Document arg0) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 }

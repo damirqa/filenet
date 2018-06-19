@@ -5,31 +5,30 @@ import java.util.Date;
 public abstract class Document implements Comparable<Document> {
 	
 	// Что с типами
-	
-	// Исправить модификатор доступа
-	protected int id; // Идентификатор документа
-	protected String name; // Название документа
-	protected String text; // Текст документа
-	protected int registrationNumber; // Регистрационный номер документа
-	protected Date dateRegistration; // Дата регистрации документа
-	protected String author; // Автор документа
 
-	// Сравниваем сначала по дате регистрации, а затем по регистрационному номеру
+	private static int counter = 0;
+	private int id = 0; // Идентификатор документа ДОДЕЛАТЬ!
+	private String name; // Название документа
+	private String text; // Текст документа
+	private int registrationNumber; // Регистрационный номер документа
+	private Date dateRegistration; // Дата регистрации документа
+	private String author; // Автор документа
+
+	
 	public int compareTo(Document doc) {
 		
 		Document document = (Document) doc;
-		
-		int result = dateRegistration.compareTo(document.getDateRegistration());
-		
+
+		int result = dateRegistration.compareTo(document.getDateRegistration());		
 		if (result != 0) {
 			return result;
 		}
 		
 		result = getRegistrationNumber() - document.getRegistrationNumber();
-		
 		if (result != 0) {
 			return (int) result / Math.abs(result);
 		}
+		
 		return 0;
 	}
 
@@ -39,19 +38,28 @@ public abstract class Document implements Comparable<Document> {
 				+ ", Дата регистрации=" + dateRegistration + ", Автор=" + author + "]";
 	}
 
+	
+	public int getCounter() {
+		return counter;
+	}
+	
+	public void setCounter() {
+		Document.counter++;
+	}
+	
 	public int getId() {
 		return id;
 	}
 
-	private void setId(int id) {
-		this.id = id;
+	public void setId() { 
+		this.id = Document.counter;
 	}
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -59,15 +67,15 @@ public abstract class Document implements Comparable<Document> {
 		return text;
 	}
 
-	private void setText(String text) {
+	public void setText(String text) {
 		this.text = text;
 	}
 
-	private int getRegistrationNumber() {
+	public int getRegistrationNumber() {
 		return registrationNumber;
 	}
 
-	private void setRegistrationNumber(int registrationNumber) {
+	public void setRegistrationNumber(int registrationNumber) {
 		this.registrationNumber = registrationNumber;
 	}
 
@@ -75,21 +83,15 @@ public abstract class Document implements Comparable<Document> {
 		return dateRegistration;
 	}
 
-	private void setDateRegistration(Date dateRegistration) {
+	public void setDateRegistration(Date dateRegistration) {
 		this.dateRegistration = dateRegistration;
 	}
 
-	private String getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
 
-	private void setAuthor(String author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
-//	public Document(int reg, Date date) {
-//		this.registrationNumber = reg;
-//		this.dateRegistration = date;
-//	}
-
 }
