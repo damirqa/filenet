@@ -6,8 +6,16 @@ public class Factory {
 		this.blacksmith = blacksmith;
 	}
 	
+	/*
+	 * blacksmith создает свой документ в зависимости от типа
+	 */
 	public Document manufactureDocument() {
-		Document document = this.blacksmith.manufactureDocument();
+		Document document = null;
+		try {
+			document = this.blacksmith.manufactureDocument();
+		} catch (DocumentExistsException e) {
+			e.printStackTrace();
+		}
 		return document;
 	}
 	

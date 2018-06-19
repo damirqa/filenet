@@ -6,10 +6,15 @@ public class OutgoingBlacksmith implements Blacksmith{
 	private String[] deliverymethod = {"Курьерская доставка", "Доставка почтовой службой", "Доставка транспортными компаниями"};
 
 	public Document manufactureDocument() {
-		return new Outgoing(name[ThreadLocalRandom.current().nextInt(9)], null,
+		
+		Outgoing outgoing = new Outgoing(name[ThreadLocalRandom.current().nextInt(9)], null,
 				ThreadLocalRandom.current().nextInt(1000), setDate(), 
 				author[ThreadLocalRandom.current().nextInt(9)], addresser[ThreadLocalRandom.current().nextInt(9)], 
 				deliverymethod[ThreadLocalRandom.current().nextInt(2)]);
+		
+		Repository.outgoingRepository.add(outgoing);
+		
+		return outgoing;
 	}
 	
 	public Date setDate() {

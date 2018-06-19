@@ -12,6 +12,9 @@ public class Outgoing extends Document{
 	public Outgoing(String name, String text, int registrationNumber, Date dateRegistration, String author,
 			String addresser, String deliverymethod) {
 		
+		setCounter();
+		setId();
+		
 		setName(name);
 		setText(text);
 		setRegistrationNumber(registrationNumber);

@@ -1,5 +1,4 @@
 import java.util.Date;
-import java.util.concurrent.ThreadLocalRandom;
 
 public interface Blacksmith {
 	
@@ -15,7 +14,7 @@ public interface Blacksmith {
 	public static String[] addressee = {"Юрий Киселёв", "Данила Сафонов", "Тимур Кузнецов", "Григорий Носов", "Эдуард Харитонов",
 			"Никита Гуляев", "Пётр Большаков", "Олег Капустин", "Анатолий Силин", "Валерий Богданов"};
 
-	public Document manufactureDocument();
+	public Document manufactureDocument() throws DocumentExistsException;
 	
 	public Date setDate();
 	

@@ -15,6 +15,9 @@ public class Task  extends Document {
 	public Task(String name, String text, int registrationNumber, Date dateRegistration, String author,
 			Date dateIssue, int termExecutionOfInstructions, String responsibleExecutor, String signOfContentity, String orderController) {
 		
+		setCounter();
+		setId();
+		
 		setName(name);
 		setText(text);
 		setRegistrationNumber(registrationNumber);

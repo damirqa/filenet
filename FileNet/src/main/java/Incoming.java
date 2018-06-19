@@ -14,6 +14,9 @@ public class Incoming extends Document{
 	public Incoming(String name, String text, int registrationNumber, Date dateRegistration, String author,
 			String addresser, String addressee, int outgoingNumber, Date outgoingRegistrationDate) {
 		
+		setCounter();
+		setId();
+		
 		setName(name);
 		setText(text);
 		setRegistrationNumber(registrationNumber);

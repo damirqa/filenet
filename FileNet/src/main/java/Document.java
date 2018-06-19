@@ -1,24 +1,25 @@
 import java.util.Date;
 
-// Класс "Документ"
-
+/*
+ * Класс "Документ"
+ */
 public abstract class Document implements Comparable<Document> {
 	
-	// Что с типами
-
-	private static int counter = 0;
-	private int id = 0; // Идентификатор документа ДОДЕЛАТЬ!
+	private static int counter = 0; // Счетчик документов
+	private int id = 0; // Идентификатор документа 
 	private String name; // Название документа
 	private String text; // Текст документа
 	private int registrationNumber; // Регистрационный номер документа
 	private Date dateRegistration; // Дата регистрации документа
 	private String author; // Автор документа
 
-	
+	/*
+	 * Метод для сравнения документов по полям dateRegistration и registrationNumber
+	 */
 	public int compareTo(Document doc) {
 		
 		Document document = (Document) doc;
-
+		
 		int result = dateRegistration.compareTo(document.getDateRegistration());		
 		if (result != 0) {
 			return result;
@@ -43,6 +44,9 @@ public abstract class Document implements Comparable<Document> {
 		return counter;
 	}
 	
+	/*
+	 * Счетчик документов
+	 */
 	public void setCounter() {
 		Document.counter++;
 	}
