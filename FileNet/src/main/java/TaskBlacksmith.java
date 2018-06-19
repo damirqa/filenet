@@ -1,27 +1,29 @@
-import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class TaskBlacksmith implements Blacksmith{
+public class TaskBlacksmith extends Blacksmith{
 
-	public Document manufactureDocument() {
+	public Document manufactureDocument() throws DocumentExistsException{
 		
-		Task task = new Task(name[ThreadLocalRandom.current().nextInt(9)], null, 
+		int regNumber = ThreadLocalRandom.current().nextInt(1000);
+		
+		if (hasRegistrationNumber(regNumber)) {
+			throw new DocumentExistsException("Документ уже существует");
+		}
+		else {
+			Document document = create(regNumber);
+			Repository.STORAGE.add(document);
+			return document;
+		}
+	}
+
+	@Override
+	protected Document create(int regNumber) {
+		return new Task(name[ThreadLocalRandom.current().nextInt(9)], null, 
 				ThreadLocalRandom.current().nextInt(1000), setDate(), 
 				author[ThreadLocalRandom.current().nextInt(9)], setDate(), 
 				ThreadLocalRandom.current().nextInt(100),
 				null, null, null);
-		
-		Repository.taskRepository.add(task);
-		
-		return task;
 	}
 
-	public Date setDate() {
-		int year = ThreadLocalRandom.current().nextInt(110, 118);
-		int month = ThreadLocalRandom.current().nextInt(0, 11);		
-		int date = ThreadLocalRandom.current().nextInt(1, 30);
-		
-		return new Date(year, month, date);
-	}
-
+	
 }
