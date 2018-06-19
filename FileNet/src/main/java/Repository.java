@@ -1,4 +1,3 @@
-import java.awt.List;
 import java.util.ArrayList;
 
 public class Repository implements Storable{
@@ -15,5 +14,13 @@ public class Repository implements Storable{
 
 	public int getId(Document doc) {
 		return doc.getId();
+	}
+	
+	public void info() {
+		
+		for (Document doc : this.repo) {
+			System.out.println(doc);
+		}
+		
 	}
 }

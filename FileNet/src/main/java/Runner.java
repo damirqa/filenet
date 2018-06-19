@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Runner {
 
 	public static void main(String[] args) {
@@ -8,12 +5,9 @@ public class Runner {
 		Factory factory = new Factory();
 		
 		factory.make(DocumentType.INCOMING);
+		factory.make(DocumentType.OUTGOING);
+		factory.make(DocumentType.TASK);
 		
-		System.out.println(ThreadLocalRandom.current().nextInt(10));
-
-		System.out.println(ThreadLocalRandom.current().nextInt(10));
-
-		System.out.println(ThreadLocalRandom.current().nextInt(100, 1000));
-
+		factory.info();
 	}
 }
