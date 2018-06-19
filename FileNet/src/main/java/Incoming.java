@@ -4,8 +4,6 @@ import java.util.Date;
 
 public class Incoming extends Document{
 	
-	// Что с типами
-
 	private String addresser; // Отправитель
 	private String addressee; // Адресат
 	private int outgoingNumber; // Исходящий номер
