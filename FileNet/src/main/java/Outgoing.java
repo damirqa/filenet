@@ -1,10 +1,9 @@
 import java.util.Date;
 
-// Класс "Исходящий документ" 
-
+/*
+ * Класс Исходящий документ
+ */
 public class Outgoing extends Document{
-	
-	// Что с типами?
 	
 	private String addresser; // Адресат
 	private String deliverymethod; // Способ доставки
@@ -28,7 +27,6 @@ public class Outgoing extends Document{
 	
 	@Override
 	public String toString() {
-		return "Исходящий документ [Отправитель=" + addresser + ", Способ доставки=" + deliverymethod + ", ID=" + getId() + ", Название="
-				+ getName() + ", Регистрационный номер=" + getRegistrationNumber() + ", Автор=" + getAuthor() + "]";
+		return "Исходящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
 }

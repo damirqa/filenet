@@ -1,21 +1,28 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class TaskBlacksmith extends Blacksmith{
+/*
+ * Метод создает "Поручение" и сохрянает в хранилище.
+ * Если документ уже существует, то выбрасывается исключение
+ */
+public class TaskGenerator extends Generator{
 
 	public Document manufactureDocument() throws DocumentExistsException{
 		
-		int regNumber = ThreadLocalRandom.current().nextInt(1000);
+		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
 		
-		if (hasRegistrationNumber(regNumber)) {
+		if (hasRegistrationNumber(registrationNumber)) {
 			throw new DocumentExistsException("Документ уже существует");
 		}
 		else {
-			Document document = create(regNumber);
+			Document document = create(registrationNumber);
 			Repository.STORAGE.add(document);
 			return document;
 		}
 	}
 
+	/*
+	 * Создаем документ
+	 */
 	@Override
 	protected Document create(int regNumber) {
 		return new Task(name[ThreadLocalRandom.current().nextInt(9)], null, 

@@ -1,10 +1,9 @@
 import java.util.Date;
 
-// класс Поручение
-
+/*
+ * Класс Поручение
+ */
 public class Task  extends Document {
-	
-	// Что с типами?
 
 	private Date dateIssue; // Дата выдачи поручения
 	private int termExecutionOfInstructions; // Срок исполнения поручения
@@ -34,9 +33,6 @@ public class Task  extends Document {
 
 	@Override
 	public String toString() {
-		return "Поручение [Дата выдачи поручения=" + dateIssue + ", Срок исполнения поручения=" + termExecutionOfInstructions
-				+ ", Ответственный исполнитель=" + responsibleExecutor + ", Признак контрольности=" + signOfContentity
-				+ ", Контролер поручения=" + orderController + ", ID=" + getId() + ", Название=" + getName() + ", Регистрационный номер="
-				+ getRegistrationNumber() + ", Автор=" + getAuthor() + "]";
+		return "Поручение №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
 }

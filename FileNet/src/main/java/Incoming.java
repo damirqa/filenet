@@ -1,7 +1,8 @@
 import java.util.Date;
 
-// Класс "Входящий документ"
-
+/*
+ * Класс Входящий документ
+ */
 public class Incoming extends Document{
 	
 	private String addresser; // Отправитель
@@ -29,9 +30,7 @@ public class Incoming extends Document{
 	
 	@Override
 	public String toString() {
-		return "Входящий документ [Отправитель=" + addresser + ", Получатель=" + addressee + ", Исходящий номер=" + outgoingNumber
-				+ ", Исходящая дата регистрации=" + outgoingRegistrationDate + ", ID=" + getId() + ", Название=" + getName()
-				+ ", Регистрационный номер=" + getRegistrationNumber() + ", Автор=" + getAuthor() + "]";
+		return "Входящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
 
 	public String getAddresser() {

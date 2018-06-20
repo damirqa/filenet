@@ -1,6 +1,9 @@
 import java.util.concurrent.ThreadLocalRandom;
 
-public class IncomingBlacksmith extends Blacksmith{
+/*
+ * Генератор входящих документов
+ */
+public class IncomingGenerator extends Generator{
 	
 	/*
 	 * Метод создает "Входящий документ" и сохрянает в хранилище.
@@ -8,13 +11,13 @@ public class IncomingBlacksmith extends Blacksmith{
 	 */
 	public Document manufactureDocument() throws DocumentExistsException {
 		
-		int regNumber = ThreadLocalRandom.current().nextInt(1000);
+		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
 		
-		if (hasRegistrationNumber(regNumber)) {
+		if (hasRegistrationNumber(registrationNumber)) {
 			throw new DocumentExistsException("Документ уже существует");
 		}
 		else {
-			Document document = create(regNumber);
+			Document document = create(registrationNumber);
 			Repository.STORAGE.add(document);
 			return document;
 		}

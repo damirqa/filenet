@@ -83,7 +83,7 @@ public abstract class Document implements Comparable<Document> {
 		this.registrationNumber = registrationNumber;
 	}
 
-	private Date getDateRegistration() {
+	public Date getDateRegistration() {
 		return dateRegistration;
 	}
 

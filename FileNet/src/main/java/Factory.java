@@ -1,8 +1,11 @@
+/*
+ * Класс Фабрика
+ */
 public class Factory {
 	
-	private final Blacksmith blacksmith;
+	private final Generator blacksmith;
 	
-	public Factory(Blacksmith blacksmith) {
+	public Factory(Generator blacksmith) {
 		this.blacksmith = blacksmith;
 	}
 	
