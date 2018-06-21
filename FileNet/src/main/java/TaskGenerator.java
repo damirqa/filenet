@@ -26,8 +26,8 @@ public class TaskGenerator extends Generator{
 	@Override
 	protected Document create(int regNumber) {
 		return new Task(name[ThreadLocalRandom.current().nextInt(9)], null, 
-				ThreadLocalRandom.current().nextInt(1000), setDate(), 
-				author[ThreadLocalRandom.current().nextInt(9)], setDate(), 
+				ThreadLocalRandom.current().nextInt(1000), generateDate(), 
+				author[ThreadLocalRandom.current().nextInt(9)], generateDate(), 
 				ThreadLocalRandom.current().nextInt(100),
 				null, null, null);
 	}

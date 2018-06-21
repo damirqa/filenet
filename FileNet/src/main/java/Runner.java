@@ -1,8 +1,10 @@
+import java.util.Date;
 import java.util.Scanner;
 
 public class Runner {
 
 	public static void main(String[] args) {
+		
 		
 		System.out.println("Введите цифру и нажмите на Enter, чтобы создать \n"
 				+ "1. Входящий документ \n"
