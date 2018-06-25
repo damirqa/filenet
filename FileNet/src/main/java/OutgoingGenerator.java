@@ -5,9 +5,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class OutgoingGenerator extends Generator{
 	
-	private String[] deliverymethod = {"Курьерская доставка", "Доставка почтовой службой", 
-			"Доставка транспортными компаниями"};
-	
 	/*
 	 * Создаем документ
 	 */
