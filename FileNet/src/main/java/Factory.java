@@ -12,14 +12,12 @@ public class Factory {
 	/*
 	 * blacksmith создает свой документ в зависимости от типа
 	 */
-	public Document manufactureDocument() {
-		Document document = null;
+	public void manufactureDocument() {
+		Document document;
 		try {
 			document = this.blacksmith.manufactureDocument();
 		} catch (DocumentExistsException e) {
 			e.printStackTrace();
 		}
-		return document;
 	}
-	
 }

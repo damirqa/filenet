@@ -6,20 +6,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class TaskGenerator extends Generator{
 
-	public Document manufactureDocument() throws DocumentExistsException{
-		
-		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
-		
-		if (hasRegistrationNumber(registrationNumber)) {
-			throw new DocumentExistsException("Документ уже существует");
-		}
-		else {
-			Document document = create(registrationNumber);
-			Repository.STORAGE.add(document);
-			return document;
-		}
-	}
-
 	/*
 	 * Создаем документ
 	 */

@@ -24,7 +24,19 @@ public abstract class Generator {
 	/*
 	 * Метод создает документ и выбрасывает исключение если документ уже создан
 	 */
-	public abstract Document manufactureDocument() throws DocumentExistsException;
+	public Document manufactureDocument() throws DocumentExistsException {
+		
+		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
+		
+		if (hasRegistrationNumber(registrationNumber)) {
+			throw new DocumentExistsException("Документ №" + registrationNumber + "уже существует");
+		}
+		else {
+			Document document = create(registrationNumber);
+			Repository.STORAGE.add(document);
+			return document;
+		}
+	};
 	
 	/*
 	 * Метод создает конкретный тип документа в зависимости от типа Генератора
@@ -67,10 +79,8 @@ public abstract class Generator {
 			}
 			else {
 				date = ThreadLocalRandom.current().nextInt(1, 30);
-			}
-			
+			}	
 		}
-		
 		return new Date(year, month, date);
 	}
 }
