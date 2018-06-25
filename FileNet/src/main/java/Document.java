@@ -16,9 +16,7 @@ public abstract class Document implements Comparable<Document> {
 	/*
 	 * Метод для сравнения документов по полям dateRegistration и registrationNumber
 	 */
-	public int compareTo(Document doc) {
-		
-		Document document = (Document) doc;
+	public int compareTo(Document document) {
 		
 		int result = dateRegistration.compareTo(document.getDateRegistration());		
 		if (result != 0) {
