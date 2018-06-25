@@ -11,6 +11,6 @@ public class Runner {
 		Factory taskFactory = new Factory(new TaskGenerator());
 		taskFactory.manufactureDocument();
 		
-		Repository.getReport();
+		Repository.printReport();
 	}
 }

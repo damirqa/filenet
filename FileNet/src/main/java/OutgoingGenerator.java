@@ -9,7 +9,7 @@ public class OutgoingGenerator extends Generator{
 	 * Создаем документ
 	 */
 	protected Document create(int registrationNumber) {
-		return new Outgoing(name.get(ThreadLocalRandom.current().nextInt(9)), registrationNumber, 
+		return new Outgoing(name.get(ThreadLocalRandom.current().nextInt(2)), registrationNumber, 
 				generateDate(), author.get(ThreadLocalRandom.current().nextInt(9)));
 		
 	}

@@ -25,7 +25,7 @@ public class Repository {
 	/*
 	 * Выводим отчет
 	 */
-	public static void getReport() {
+	public static void printReport() {
 		
 		SortedSet<String> authors = getAuthorsWithDocuments();
 		

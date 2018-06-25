@@ -10,7 +10,7 @@ public class Factory {
 	}
 	
 	/*
-	 * blacksmith создает свой документ в зависимости от типа
+	 * generator создает документ
 	 */
 	public void manufactureDocument() {
 		try {

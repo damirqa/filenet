@@ -5,7 +5,7 @@ import java.util.Date;
  */
 public class Incoming extends Document{
 	
-	private String addresser; // Отправитель
+	private String sender; // Отправитель
 	private String addressee; // Адресат
 	private int outgoingNumber; // Исходящий номер
 	private Date outgoingRegistrationDate; // Исходящая дата регистрации
@@ -26,12 +26,12 @@ public class Incoming extends Document{
 		return "Входящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
 
-	public String getAddresser() {
-		return addresser;
+	public String getSender() {
+		return sender;
 	}
 
-	public void setAddresser(String addresser) {
-		this.addresser = addresser;
+	public void setSender(String sender) {
+		this.sender = sender;
 	}
 
 	public String getAddressee() {

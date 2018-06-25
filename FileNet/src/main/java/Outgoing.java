@@ -5,7 +5,7 @@ import java.util.Date;
  */
 public class Outgoing extends Document{
 	
-	private String addresser; // Адресат
+	private String sender; // Отправитель
 	private String deliverymethod; // Способ доставки
 	
 	public Outgoing(String name, int registrationNumber, Date dateRegistration, String author) {
@@ -24,12 +24,12 @@ public class Outgoing extends Document{
 		return "Исходящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
 
-	public String getAddresser() {
-		return addresser;
+	public String getSender() {
+		return sender;
 	}
 
-	public void setAddresser(String addresser) {
-		this.addresser = addresser;
+	public void setAddresser(String sender) {
+		this.sender = sender;
 	}
 
 	public String getDeliverymethod() {
