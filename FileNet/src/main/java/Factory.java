@@ -3,19 +3,18 @@
  */
 public class Factory {
 	
-	private final Generator blacksmith;
+	private final Generator generator;
 	
-	public Factory(Generator blacksmith) {
-		this.blacksmith = blacksmith;
+	public Factory(Generator generator) {
+		this.generator = generator;
 	}
 	
 	/*
 	 * blacksmith создает свой документ в зависимости от типа
 	 */
 	public void manufactureDocument() {
-		Document document;
 		try {
-			document = this.blacksmith.manufactureDocument();
+			Document document = this.generator.manufactureDocument();
 		} catch (DocumentExistsException e) {
 			e.printStackTrace();
 		}
