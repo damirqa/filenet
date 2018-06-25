@@ -1,3 +1,5 @@
+package ru.damirqa.model;
+
 import java.util.Date;
 
 /*

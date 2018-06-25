@@ -1,3 +1,5 @@
+package ru.damirqa.interfaces;
+
 public interface Storable {
 	
 	void getId();

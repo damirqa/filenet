@@ -1,3 +1,9 @@
+package ru.damirqa.factory;
+
+import ru.damirqa.exceptions.DocumentExistsException;
+import ru.damirqa.model.Document;
+import ru.damirqa.storage.Repository;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -20,12 +26,12 @@ public abstract class Generator {
 	/*
 	 * Метод создает документ и выбрасывает исключение если документ уже создан
 	 */
-	public Document manufactureDocument() throws DocumentExistsException {
+	public Document createDocument() throws DocumentExistsException {
 		
 		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
 		
 		if (hasRegistrationNumber(registrationNumber)) {
-			throw new DocumentExistsException("Документ №" + registrationNumber + "уже существует");
+			throw new DocumentExistsException("Документ №" + registrationNumber + " уже существует");
 		}
 		else {
 			Document document = create(registrationNumber);

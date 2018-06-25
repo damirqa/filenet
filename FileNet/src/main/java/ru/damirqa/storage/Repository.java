@@ -1,8 +1,18 @@
+package ru.damirqa.storage;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import ru.damirqa.model.Document;
+import ru.damirqa.factory.Generator;
+
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Repository {
 
+	private static Logger logger = LoggerFactory.getLogger(Repository.class);
+	
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
 	/*
@@ -24,20 +34,20 @@ public class Repository {
 	
 	/*
 	 * Выводим отчет
-	 */
+	 */  
 	public static void printReport() {
 		
 		SortedSet<String> authors = getAuthorsWithDocuments();
 		
 		if (authors.isEmpty()) {
-			System.out.println("Документы не созданы");
+			logger.info("Документы не созданы");
 		}
 		else {
 			for (String author : authors) {
-				System.out.println(author + ":");
+				logger.info(author, ":");
 				for (Document document : STORAGE) {
 					if (author.equals(document.getAuthor())) {
-						System.out.println("\t" + document);
+						logger.info("\t" + document);
 					}
 				}
 			}

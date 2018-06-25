@@ -1,3 +1,8 @@
+package ru.damirqa.factory;
+
+import ru.damirqa.model.Document;
+import ru.damirqa.model.Incoming;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
