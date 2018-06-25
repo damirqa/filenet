@@ -8,21 +8,15 @@ public class Outgoing extends Document{
 	private String addresser; // Адресат
 	private String deliverymethod; // Способ доставки
 	
-	public Outgoing(String name, String text, int registrationNumber, Date dateRegistration, String author,
-			String addresser, String deliverymethod) {
+	public Outgoing(String name, int registrationNumber, Date dateRegistration, String author) {
 		
 		setCounter();
 		setId();
 		
 		setName(name);
-		setText(text);
 		setRegistrationNumber(registrationNumber);
 		setDateRegistration(dateRegistration);
 		setAuthor(author);
-		
-		this.addresser = addresser;
-		this.deliverymethod = deliverymethod;
-		
 	}
 	
 	@Override

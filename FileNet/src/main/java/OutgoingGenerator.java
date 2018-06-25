@@ -11,10 +11,9 @@ public class OutgoingGenerator extends Generator{
 	/*
 	 * Создаем документ
 	 */
-	protected Document create(int regNumber) {
-		return new Outgoing(name[ThreadLocalRandom.current().nextInt(9)], null,
-				ThreadLocalRandom.current().nextInt(1000), generateDate(), 
-				author[ThreadLocalRandom.current().nextInt(9)], addresser[ThreadLocalRandom.current().nextInt(9)], 
-				deliverymethod[ThreadLocalRandom.current().nextInt(2)]);
+	protected Document create(int registrationNumber) {
+		return new Outgoing(name[ThreadLocalRandom.current().nextInt(9)], registrationNumber, 
+				generateDate(), author[ThreadLocalRandom.current().nextInt(9)]);
+		
 	}
 }

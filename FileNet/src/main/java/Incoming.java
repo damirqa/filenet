@@ -10,22 +10,15 @@ public class Incoming extends Document{
 	private int outgoingNumber; // Исходящий номер
 	private Date outgoingRegistrationDate; // Исходящая дата регистрации
 	
-	public Incoming(String name, String text, int registrationNumber, Date dateRegistration, String author,
-			String addresser, String addressee, int outgoingNumber, Date outgoingRegistrationDate) {
+	public Incoming(String name, int registrationNumber, Date dateRegistration, String author) {
 		
 		setCounter();
 		setId();
 		
 		setName(name);
-		setText(text);
 		setRegistrationNumber(registrationNumber);
 		setDateRegistration(dateRegistration);
 		setAuthor(author);
-		
-		this.addresser = addresser;
-		this.addressee = addressee;
-		this.outgoingNumber = outgoingNumber;
-		this.outgoingRegistrationDate = outgoingRegistrationDate;
 	}
 	
 	@Override

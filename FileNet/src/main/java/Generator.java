@@ -41,7 +41,7 @@ public abstract class Generator {
 	/*
 	 * Метод создает конкретный тип документа в зависимости от типа Генератора
 	 */
-	protected abstract Document create(int regNumber);
+	protected abstract Document create(int registrationNumber);
 	
 	
 	/*
