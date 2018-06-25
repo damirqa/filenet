@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
@@ -9,17 +12,13 @@ public abstract class Generator {
 	/*
 	 * Массивы для рандомго заполнения документов
 	 */
-	public static String[] name = {"Внутренний документ", "Архивное дело", "Входящий документ", "Поступивший документ",
-			"Исходящий документ", "Заявление", "Протокол", "Учредительный договор", "Устав предприятия", "Свидетельство"};
 	
-	public static String[] author = {"Антон Силуанов", "Константин Чуйченко", "Максим Акимов", "Юрий Борисов", 
-			"Татьяна Голикова", "Ольга Голодец", "Алексей Гордеев", "Дмитрий Козак", "Виталий Мутко", "Юрий Трутнев"};
-	
-	public static String[] addresser = {"Тимур Гришин", "Артём Рожков", "Виктор Рогов", "Данила Степанов", "Ярослав Носков", 
-			"Анатолий Жданов", "Егор Родионов", "Алексей Фокин", "Ростислав Кудрявцев", "Игорь Кириллов"};
-	
-	public static String[] addressee = {"Юрий Киселёв", "Данила Сафонов", "Тимур Кузнецов", "Григорий Носов", 
-			"Эдуард Харитонов","Никита Гуляев", "Пётр Большаков", "Олег Капустин", "Анатолий Силин", "Валерий Богданов"};
+	public static final List<String> name = Arrays.asList("Внутренний документ", "Архивное дело", 
+			"Входящий документ", "Поступивший документ", "Исходящий документ", "Заявление", "Протокол", 
+			"Учредительный договор", "Устав предприятия", "Свидетельство");
+
+	public static final List<String> author = Arrays.asList("Антон Силуанов", "Константин Чуйченко", "Максим Акимов", "Юрий Борисов", 
+			"Татьяна Голикова", "Ольга Голодец", "Алексей Гордеев", "Дмитрий Козак", "Виталий Мутко", "Юрий Трутнев");
 
 	/*
 	 * Метод создает документ и выбрасывает исключение если документ уже создан
@@ -47,9 +46,9 @@ public abstract class Generator {
 	/*
 	 * Проверяем существует ли регистрационный номер
 	 */
-	public boolean hasRegistrationNumber(int regNumber) {
+	public boolean hasRegistrationNumber(int registrationNumber) {
 		for (Document incoming : Repository.STORAGE) {
-			if (incoming.getRegistrationNumber() == regNumber) {
+			if (incoming.getRegistrationNumber() == registrationNumber) {
 				return true;
 			}
 		}
