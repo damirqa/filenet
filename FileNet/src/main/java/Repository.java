@@ -29,14 +29,18 @@ public class Repository {
 		
 		SortedSet<String> authors = getAuthorsWithDocuments();
 		
-		for (String author : Generator.author) {
-			System.out.println(author + ":");
-			for (Document document : STORAGE) {
-				if (author.equals(document.getAuthor())) {
-					System.out.println("\t" + document);
+		if (authors.isEmpty()) {
+			System.out.println("Документы не созданы");
+		}
+		else {
+			for (String author : authors) {
+				System.out.println(author + ":");
+				for (Document document : STORAGE) {
+					if (author.equals(document.getAuthor())) {
+						System.out.println("\t" + document);
+					}
 				}
 			}
 		}
-		
 	}
 }
