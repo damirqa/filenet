@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -8,22 +6,13 @@ public class Repository {
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
 	/*
-	 * Возвращаем список авторов
-	 */
-	public static List<String> getListOfAuthors() {
-		
-		List<String> authors = Arrays.asList(Generator.author);
-		return authors;
-	}
-	
-	/*
 	 * Получаем список авторов с документами
 	 */
-	public static SortedSet<String> getAuthorsWithDocuments(List<String> authors) {
+	public static SortedSet<String> getAuthorsWithDocuments() {
 		
 		SortedSet<String> authorWithDocument = new TreeSet<String>();
 		
-		for (String author : authors) {
+		for (String author : Generator.author) {
 			for (Document document : STORAGE) {
 				if (author.equals(document.getAuthor())) {
 					authorWithDocument.add(author);
@@ -38,9 +27,9 @@ public class Repository {
 	 */
 	public static void getReport() {
 		
-		SortedSet<String> authors = getAuthorsWithDocuments(getListOfAuthors());
+		SortedSet<String> authors = getAuthorsWithDocuments();
 		
-		for (String author : authors) {
+		for (String author : Generator.author) {
 			System.out.println(author + ":");
 			for (Document document : STORAGE) {
 				if (author.equals(document.getAuthor())) {
