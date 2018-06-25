@@ -63,8 +63,5 @@ public class Incoming extends Document{
 
 	public void setOutgoingRegistrationDate(Date outgoingRegistrationDate) {
 		this.outgoingRegistrationDate = outgoingRegistrationDate;
-	}
-	
-	
-	
+	}	
 }

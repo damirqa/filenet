@@ -29,4 +29,20 @@ public class Outgoing extends Document{
 	public String toString() {
 		return "Исходящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
 	}
+
+	public String getAddresser() {
+		return addresser;
+	}
+
+	public void setAddresser(String addresser) {
+		this.addresser = addresser;
+	}
+
+	public String getDeliverymethod() {
+		return deliverymethod;
+	}
+
+	public void setDeliverymethod(String deliverymethod) {
+		this.deliverymethod = deliverymethod;
+	}
 }
