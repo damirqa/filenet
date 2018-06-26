@@ -12,12 +12,11 @@ public class Incoming extends Document{
 	private int outgoingNumber; // Исходящий номер
 	private Date outgoingRegistrationDate; // Исходящая дата регистрации
 	
-	public Incoming(String name, int registrationNumber, Date dateRegistration, String author) {
+	public Incoming(int registrationNumber, Date dateRegistration, String author) {
 		
 		setCounter();
 		setId();
 		
-		setName(name);
 		setRegistrationNumber(registrationNumber);
 		setDateRegistration(dateRegistration);
 		setAuthor(author);
@@ -25,7 +24,7 @@ public class Incoming extends Document{
 	
 	@Override
 	public String toString() {
-		return "Входящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
+		return "Входящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ".";
 	}
 
 	public String getSender() {

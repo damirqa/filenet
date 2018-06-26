@@ -13,12 +13,11 @@ public class Task  extends Document {
 	private String signOfContentity; // Признак контрольности
 	private String orderController; // Контролер поручения
 	
-	public Task(String name, int registrationNumber, Date dateRegistration, String author) {
+	public Task(int registrationNumber, Date dateRegistration, String author) {
 		
 		setCounter();
 		setId();
 		
-		setName(name);
 		setRegistrationNumber(registrationNumber);
 		setDateRegistration(dateRegistration);
 		setAuthor(author);
@@ -26,7 +25,7 @@ public class Task  extends Document {
 
 	@Override
 	public String toString() {
-		return "Поручение №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
+		return "Поручение №" + getRegistrationNumber() + " от " + getDateRegistration() + ".";
 	}
 
 	public Date getDateIssue() {

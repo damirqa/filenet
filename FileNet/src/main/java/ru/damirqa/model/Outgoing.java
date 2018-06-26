@@ -10,12 +10,11 @@ public class Outgoing extends Document{
 	private String sender; // Отправитель
 	private String deliverymethod; // Способ доставки
 	
-	public Outgoing(String name, int registrationNumber, Date dateRegistration, String author) {
+	public Outgoing(int registrationNumber, Date dateRegistration, String author) {
 		
 		setCounter();
 		setId();
 		
-		setName(name);
 		setRegistrationNumber(registrationNumber);
 		setDateRegistration(dateRegistration);
 		setAuthor(author);
@@ -23,7 +22,7 @@ public class Outgoing extends Document{
 	
 	@Override
 	public String toString() {
-		return "Исходящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ". " + getName() + "";
+		return "Исходящий №" + getRegistrationNumber() + " от " + getDateRegistration() + ".";
 	}
 
 	public String getSender() {
