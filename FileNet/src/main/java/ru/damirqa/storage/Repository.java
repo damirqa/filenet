@@ -6,7 +6,10 @@ import org.slf4j.LoggerFactory;
 import ru.damirqa.model.Document;
 import ru.damirqa.factory.Generator;
 
+import java.util.Map.Entry;
+import java.util.SortedMap;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Repository {
@@ -15,21 +18,20 @@ public class Repository {
 	
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
+	private static SortedMap<String, SortedSet<Document>> report = new TreeMap<String, SortedSet<Document>>();
+
+	
 	/*
-	 * Получаем список авторов с документами
+	 * Формируем отчет
 	 */
-	public static SortedSet<String> getAuthorsWithDocuments() {
-		
-		SortedSet<String> authorWithDocument = new TreeSet<String>();
-		
-		for (String author : Generator.author) {
-			for (Document document : STORAGE) {
-				if (author.equals(document.getAuthor())) {
-					authorWithDocument.add(author);
-				}
+	private static void formReport() {
+				
+		for (Document document : STORAGE) {
+			if (!report.containsKey(document.getAuthor())) {
+				report.put(document.getAuthor(), new TreeSet<Document>());
 			}
+			report.get(document.getAuthor()).add(document);
 		}
-		return authorWithDocument;	
 	}
 	
 	/*
@@ -37,20 +39,15 @@ public class Repository {
 	 */  
 	public static void printReport() {
 		
-		SortedSet<String> authors = getAuthorsWithDocuments();
+		formReport();
 		
-		if (authors.isEmpty()) {
-			logger.info("Документы не созданы");
+		if (report.size() != 0) {
+			for (Entry<String, SortedSet<Document>> link : report.entrySet()) {
+				logger.info(link.getKey() + link.getValue().toString().replaceAll("\\[|,\\s", "\n\t").replaceAll("\\]", ""));
+			}
 		}
 		else {
-			for (String author : authors) {
-				logger.info(author, ":");
-				for (Document document : STORAGE) {
-					if (author.equals(document.getAuthor())) {
-						logger.info("\t" + document);
-					}
-				}
-			}
+			logger.info("Документы не созданы");
 		}
 	}
 }
