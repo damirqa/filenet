@@ -26,7 +26,7 @@ public abstract class Generator {
 	/*
 	 * Метод создает документ и выбрасывает исключение если документ уже создан
 	 */
-	public Document createDocument() throws DocumentExistsException {
+	public void createDocument() throws DocumentExistsException {
 		
 		int registrationNumber = ThreadLocalRandom.current().nextInt(1000);
 		
@@ -36,7 +36,6 @@ public abstract class Generator {
 		else {
 			Document document = create(registrationNumber);
 			Repository.STORAGE.add(document);
-			return document;
 		}
 	};
 	
