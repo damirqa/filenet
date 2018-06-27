@@ -12,18 +12,8 @@ public class Runner {
 
 		Factory factory = new Factory();
 		
-		int count = ThreadLocalRandom.current().nextInt(10);
-		
-		for (int i = 0; i < count; i++) {
-			int type = ThreadLocalRandom.current().nextInt(0,3) * 10 / 3;
-			switch(type) {
-				case 0: factory.createDocument(DocumentTypes.INCOMING);
-				break;
-				case 3: factory.createDocument(DocumentTypes.OUTGOING);
-				break;
-				case 6: factory.createDocument(DocumentTypes.TASK);
-				break;
-			} 
+		for (int i = 0; i < ThreadLocalRandom.current().nextInt(10); i++) {
+			factory.createDocument(DocumentTypes.values()[ThreadLocalRandom.current().nextInt(0, DocumentTypes.values().length)]);
 		}
 		Repository.printReport();
 	}
