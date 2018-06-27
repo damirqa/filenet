@@ -1,9 +1,10 @@
 package ru.damirqa.factory;
 
-import ru.damirqa.model.Document;
-import ru.damirqa.model.Task;
-
 import java.util.concurrent.ThreadLocalRandom;
+
+import ru.damirqa.model.documents.Document;
+import ru.damirqa.model.documents.Task;
+import ru.damirqa.storage.Employees;
 
 public class TaskGenerator extends Generator{
 
@@ -12,6 +13,6 @@ public class TaskGenerator extends Generator{
 	 */
 	@Override
 	protected Document create(int registrationNumber) {
-		return new Task(registrationNumber, generateDate(), author.get(ThreadLocalRandom.current().nextInt(9)));
+		return new Task(registrationNumber, generateDate(), Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(9)));
 	}
 }

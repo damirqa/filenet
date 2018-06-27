@@ -1,7 +1,7 @@
 package ru.damirqa.factory;
 
 import ru.damirqa.exceptions.DocumentExistsException;
-import ru.damirqa.model.Document;
+import ru.damirqa.model.documents.Document;
 import ru.damirqa.storage.Repository;
 
 import java.util.Arrays;
@@ -14,13 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public abstract class Generator {
 	
-	/*
-	 * Список для рандомного заполнения документов
-	 */
-
-	public static final List<String> author = Arrays.asList("Антон Силуанов", "Константин Чуйченко", "Максим Акимов", "Юрий Борисов", 
-			"Татьяна Голикова", "Ольга Голодец", "Алексей Гордеев", "Дмитрий Козак", "Виталий Мутко", "Юрий Трутнев");
-
 	/*
 	 * Метод создает документ и выбрасывает исключение если документ уже создан
 	 */

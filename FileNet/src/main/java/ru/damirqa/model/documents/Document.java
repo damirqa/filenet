@@ -1,6 +1,8 @@
-package ru.damirqa.model;
+package ru.damirqa.model.documents;
 
 import java.util.Date;
+
+import ru.damirqa.model.staffs.Person;
 
 /*
  * Класс "Документ"
@@ -13,7 +15,7 @@ public abstract class Document implements Comparable<Document> {
 	private String text; // Текст документа
 	private int registrationNumber; // Регистрационный номер документа
 	private Date dateRegistration; // Дата регистрации документа
-	private String author; // Автор документа
+	private Person author; // Автор документа
 
 	/*
 	 * Метод для сравнения документов по полям dateRegistration и registrationNumber
@@ -91,11 +93,11 @@ public abstract class Document implements Comparable<Document> {
 		this.dateRegistration = dateRegistration;
 	}
 
-	public String getAuthor() {
+	public Person getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Person author) {
 		this.author = author;
 	}
 }
