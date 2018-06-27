@@ -18,7 +18,7 @@ public class Repository {
 	
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
-	private static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
+	public static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
 
 	
 	/*

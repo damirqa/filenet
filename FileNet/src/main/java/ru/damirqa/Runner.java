@@ -5,6 +5,7 @@ import ru.damirqa.factory.Factory;
 import ru.damirqa.storage.Employees;
 import ru.damirqa.storage.Repository;
 import ru.damirqa.utils.ParserJAXB;
+import ru.damirqa.utils.ReportJSON;
 
 import java.io.File;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,5 +29,7 @@ public class Runner {
 			factory.createDocument(DocumentTypes.values()[ThreadLocalRandom.current().nextInt(0, DocumentTypes.values().length)]);
 		}
 		Repository.printReport();
+		
+		ReportJSON.convertReportToJSON();
 	}
 }
