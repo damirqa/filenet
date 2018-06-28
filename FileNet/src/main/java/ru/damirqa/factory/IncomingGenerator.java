@@ -15,6 +15,7 @@ public class IncomingGenerator extends Generator{
 	 * Создаем документ
 	 */
 	protected Document create(int registrationNumber) {
-		return new Incoming(registrationNumber, generateDate(), Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(9)));
+		return new Incoming(registrationNumber, generateDate(), 
+				Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(Employees.listOfEmployees.size())));
 	}
 }

@@ -13,6 +13,7 @@ public class TaskGenerator extends Generator{
 	 */
 	@Override
 	protected Document create(int registrationNumber) {
-		return new Task(registrationNumber, generateDate(), Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(Employees.listOfEmployees.size())));
+		return new Task(registrationNumber, generateDate(), 
+				Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(Employees.listOfEmployees.size())));
 	}
 }
