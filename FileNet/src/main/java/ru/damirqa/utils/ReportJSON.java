@@ -20,23 +20,17 @@ public class ReportJSON {
 
 	private static Logger logger = LoggerFactory.getLogger(ReportJSON.class);
 	
-	
 	public static void convertReportToJSON() {
 		
 		Gson gson = new Gson();
-		Writer writer;
 		
 		if (Repository.report.size() != 0) {
 			for (Entry<Person, SortedSet<Document>> link : Repository.report.entrySet()) {
-				try {
-					writer = new FileWriter("C:\\Users\\kacer\\Desktop\\" + link.getKey() + ".json");
+				try (Writer writer = new FileWriter("C:\\Users\\kacer\\Desktop\\" + link.getKey() + ".json")) {
 					String json = gson.toJson(link.getValue());
 					writer.write(json);
-					writer.close();
-				} catch (JsonIOException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
+				} catch (JsonIOException | IOException e) {
+					logger.info(e.getMessage());
 				}
 			}
 		}		
