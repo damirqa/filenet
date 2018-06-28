@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
 
 import ru.damirqa.model.documents.Document;
-import ru.damirqa.model.staffs.Person;
+import ru.damirqa.model.staff.Person;
 import ru.damirqa.storage.Repository;
 
 import java.io.FileWriter;
@@ -15,8 +15,6 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.SortedMap;
 import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.Map;
 import java.util.Map.Entry;
 
 public class ReportJSON {

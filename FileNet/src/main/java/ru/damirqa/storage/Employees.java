@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import ru.damirqa.model.staffs.Person;
+import ru.damirqa.model.staff.Person;
 
 @XmlRootElement(name = "Employees")
 public class Employees {

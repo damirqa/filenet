@@ -1,4 +1,4 @@
-package ru.damirqa.model.staffs;
+package ru.damirqa.model.staff;
 
 public class Organization extends Staff{
 

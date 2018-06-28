@@ -2,7 +2,7 @@ package ru.damirqa.model.documents;
 
 import java.util.Date;
 
-import ru.damirqa.model.staffs.Person;
+import ru.damirqa.model.staff.Person;
 
 /*
  * Класс Поручение

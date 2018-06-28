@@ -1,4 +1,4 @@
-package ru.damirqa.model.staffs;
+package ru.damirqa.model.staff;
 
 public class Person extends Staff implements Comparable<Person>{
 

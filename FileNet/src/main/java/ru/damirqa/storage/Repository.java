@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ru.damirqa.model.documents.Document;
-import ru.damirqa.model.staffs.Person;
+import ru.damirqa.model.staff.Person;
 
 import java.util.Map.Entry;
 import java.util.SortedMap;
