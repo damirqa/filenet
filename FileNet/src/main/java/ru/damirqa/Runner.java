@@ -30,6 +30,6 @@ public class Runner {
 		}
 		Repository.printReport();
 		
-		ReportJSON.convertReportToJSON();
+		ReportJSON.convertReportToJSON(Repository.report);
 	}
 }
