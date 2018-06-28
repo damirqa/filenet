@@ -1,5 +1,8 @@
 package ru.damirqa.model.staff;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "Person")
 public class Person extends Staff implements Comparable<Person>{
 
 	private String firstName; // Имя
@@ -34,18 +37,22 @@ public class Person extends Staff implements Comparable<Person>{
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 	public String getMiddleName() {
 		return middleName;
 	}
+	
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}

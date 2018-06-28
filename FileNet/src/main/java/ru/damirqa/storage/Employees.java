@@ -1,20 +1,34 @@
 package ru.damirqa.storage;
 
+import ru.damirqa.model.staff.Person;
+import ru.damirqa.service.EmployeesWrapJAXB;
+import ru.damirqa.utils.ParserJAXB;
+
+import java.io.File;
 import java.util.ArrayList;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.JAXBException;
 
-import ru.damirqa.model.staff.Person;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@XmlRootElement(name = "Employees")
 public class Employees {
+	
+	private static Logger logger = LoggerFactory.getLogger(Employees.class);
 
-    @XmlElement(name = "Person")
 	public static ArrayList<Person> listOfEmployees = new ArrayList<Person>();
 	
-    @Override
-    public String toString() {
-    	return "Персонал";
-    }
+	public static void setListOfEmployees(File file, Class<?> objectClass) {
+
+		Object list = null;
+		try {
+			list = ParserJAXB.unmarshal(file, objectClass);
+		} catch (JAXBException e) {
+			logger.info(e.getMessage());
+		} finally {
+			if (list != null) {
+				listOfEmployees = EmployeesWrapJAXB.getEmployees();
+			}
+		}
+	}
 }

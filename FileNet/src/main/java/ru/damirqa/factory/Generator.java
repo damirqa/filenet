@@ -4,9 +4,7 @@ import ru.damirqa.exceptions.DocumentExistsException;
 import ru.damirqa.model.documents.Document;
 import ru.damirqa.storage.Repository;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
@@ -50,6 +48,7 @@ public abstract class Generator {
 	
 	/*
 	 * Создаем рандомную дату
+	 * Исправить
 	 */
 	public Date generateDate() {
 		
