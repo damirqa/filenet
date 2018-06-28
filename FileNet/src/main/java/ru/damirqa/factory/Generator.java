@@ -48,30 +48,8 @@ public abstract class Generator {
 	
 	/*
 	 * Создаем рандомную дату
-	 * Исправить
 	 */
 	public Date generateDate() {
-		
-		int year = ThreadLocalRandom.current().nextInt(110, 118);
-		int month = ThreadLocalRandom.current().nextInt(0, 11);		
-		int date = 0;
-		
-		if (month % 2 == 0) {
-			date = ThreadLocalRandom.current().nextInt(1, 31);
-		}
-		else {
-			if (month == 1) {
-				if (year % 4 == 0) {
-					date = ThreadLocalRandom.current().nextInt(1, 29);
-				}
-				else {
-					date = ThreadLocalRandom.current().nextInt(1, 28);
-				}
-			}
-			else {
-				date = ThreadLocalRandom.current().nextInt(1, 30);
-			}	
-		}
-		return new Date(year, month, date);
+		return new Date(System.currentTimeMillis() - ThreadLocalRandom.current().nextLong(1000*60*60*24*1000));
 	}
 }
