@@ -3,7 +3,8 @@ package ru.damirqa.storage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ru.damirqa.model.Document;
+import ru.damirqa.model.documents.Document;
+import ru.damirqa.model.staff.Person;
 
 import java.util.Map.Entry;
 import java.util.SortedMap;
@@ -17,7 +18,7 @@ public class Repository {
 	
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
-	private static SortedMap<String, SortedSet<Document>> report = new TreeMap<String, SortedSet<Document>>();
+	public static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
 
 	
 	/*
@@ -41,7 +42,7 @@ public class Repository {
 		formReport();
 		
 		if (report.size() != 0) {
-			for (Entry<String, SortedSet<Document>> link : report.entrySet()) {
+			for (Entry<Person, SortedSet<Document>> link : report.entrySet()) {
 				logger.info(link.getKey() + link.getValue().toString().replaceAll("\\[|,\\s", "\n\t").replaceAll("\\]", ""));
 			}
 		}

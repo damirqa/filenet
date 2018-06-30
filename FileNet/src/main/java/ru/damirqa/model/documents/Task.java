@@ -1,6 +1,8 @@
-package ru.damirqa.model;
+package ru.damirqa.model.documents;
 
 import java.util.Date;
+
+import ru.damirqa.model.staff.Person;
 
 /*
  * Класс Поручение
@@ -13,7 +15,7 @@ public class Task  extends Document {
 	private String signOfContentity; // Признак контрольности
 	private String orderController; // Контролер поручения
 	
-	public Task(int registrationNumber, Date dateRegistration, String author) {
+	public Task(int registrationNumber, Date dateRegistration, Person author) {
 		
 		setCounter();
 		setId();

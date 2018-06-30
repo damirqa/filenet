@@ -1,9 +1,10 @@
 package ru.damirqa.factory;
 
-import ru.damirqa.model.Document;
-import ru.damirqa.model.Incoming;
-
 import java.util.concurrent.ThreadLocalRandom;
+
+import ru.damirqa.model.documents.Document;
+import ru.damirqa.model.documents.Incoming;
+import ru.damirqa.storage.Employees;
 
 /*
  * Генератор входящих документов
@@ -14,6 +15,7 @@ public class IncomingGenerator extends Generator{
 	 * Создаем документ
 	 */
 	protected Document create(int registrationNumber) {
-		return new Incoming(registrationNumber, generateDate(), author.get(ThreadLocalRandom.current().nextInt(9)));
+		return new Incoming(registrationNumber, generateDate(), 
+				Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(Employees.listOfEmployees.size())));
 	}
 }
