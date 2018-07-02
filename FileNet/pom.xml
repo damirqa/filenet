@@ -3,7 +3,13 @@
   <groupId>filenet.damirqa.com.github</groupId>
   <artifactId>FileNet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
 	<dependencies>
+		<dependency>
+    		<groupId>javax.ws.rs</groupId>
+    		<artifactId>javax.ws.rs-api</artifactId>
+    		<version>2.0</version>
+		</dependency>
 		<dependency>
     		<groupId>org.slf4j</groupId>
     		<artifactId>slf4j-api</artifactId>
