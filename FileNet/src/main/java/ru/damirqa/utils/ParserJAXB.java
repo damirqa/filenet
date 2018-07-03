@@ -12,19 +12,13 @@ public class ParserJAXB {
 	
 	private static Logger logger = LoggerFactory.getLogger(ParserJAXB.class);
 
-	public static Object unmarshal(File file, Class<?> objectClass) throws JAXBException{
-		
+	public static void unmarshal(File file, Class<?> objectClass) throws JAXBException{	
 		try {
 			JAXBContext context = JAXBContext.newInstance(objectClass);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
-			Object object = unmarshaller.unmarshal(file);
-			return object;
+			unmarshaller.unmarshal(file);
 		} catch (JAXBException e) {
 			logger.info(e.getMessage());
 		}
-		return null;
 	}
-	
-	
-	
 }

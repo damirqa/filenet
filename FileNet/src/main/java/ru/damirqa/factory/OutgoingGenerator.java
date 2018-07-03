@@ -16,7 +16,7 @@ public class OutgoingGenerator extends Generator{
 	 */
 	protected Document create(int registrationNumber) {
 		return new Outgoing(registrationNumber, generateDate(), 
-				Employees.listOfEmployees.get(ThreadLocalRandom.current().nextInt(Employees.listOfEmployees.size())));
+				Employees.list.get(ThreadLocalRandom.current().nextInt(Employees.list.size())));
 		
 	}
 }

@@ -1,4 +1,4 @@
-package ru.damirqa;
+ package ru.damirqa;
 
 import ru.damirqa.factory.DocumentTypes;
 import ru.damirqa.factory.Factory;

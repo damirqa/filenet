@@ -16,19 +16,15 @@ public class Employees {
 	
 	private static Logger logger = LoggerFactory.getLogger(Employees.class);
 
-	public static ArrayList<Person> listOfEmployees = new ArrayList<Person>();
+	public static ArrayList<Person> list = new ArrayList<Person>();
 	
 	public static void setListOfEmployees(File file, Class<?> objectClass) {
-
-		Object list = null;
 		try {
-			list = ParserJAXB.unmarshal(file, objectClass);
+			ParserJAXB.unmarshal(file, objectClass);
 		} catch (JAXBException e) {
 			logger.info(e.getMessage());
 		} finally {
-			if (list != null) {
-				listOfEmployees = EmployeesWrapJAXB.getEmployees();
-			}
+			list = EmployeesWrapJAXB.getEmployees();
 		}
 	}
 }
