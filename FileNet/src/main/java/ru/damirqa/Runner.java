@@ -21,6 +21,7 @@ public class Runner {
 		for (int i = 0; i < ThreadLocalRandom.current().nextInt(10); i++) {
 			factory.createDocument(DocumentTypes.values()[ThreadLocalRandom.current().nextInt(0, DocumentTypes.values().length)]);
 		}
+		
 		Repository.printReport();
 		
 		ReportJSON.convertReportToJSON(Repository.report);

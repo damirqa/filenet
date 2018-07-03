@@ -1,5 +1,8 @@
 package ru.damirqa.storage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ru.damirqa.model.staff.Person;
 import ru.damirqa.service.EmployeesWrapJAXB;
 import ru.damirqa.utils.ParserJAXB;
@@ -8,9 +11,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import javax.xml.bind.JAXBException;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Employees {
 	

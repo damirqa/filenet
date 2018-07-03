@@ -19,12 +19,11 @@ public class Repository {
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
 	public static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
-
 	
 	/*
 	 * Формируем отчет
 	 */
-	private static void formReport() {
+	public static void formReport() {
 				
 		for (Document document : STORAGE) {
 			if (!report.containsKey(document.getAuthor())) {
