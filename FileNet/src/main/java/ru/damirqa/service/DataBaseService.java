@@ -1,19 +1,14 @@
 package ru.damirqa.service;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import ru.damirqa.model.staff.Person;
-import ru.damirqa.storage.Employees;
 
 public class DataBaseService {
 	
@@ -30,7 +25,9 @@ public class DataBaseService {
 	 public DataBaseService() {
 		 try {
 			Class.forName(DRIVER);
-			loadingData("person");
+			loadingData("PERSON");
+			System.out.println("nes");
+			loadingData("PERSON");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -42,30 +39,33 @@ public class DataBaseService {
 	
 	private void loadingData(String tableName) {
 		try (Connection connection = getConnection()) {
-			createPersonTable(connection, tableName);
-			System.out.println(hasExistsTable(connection, tableName));
-//			if (!hasExistsTable(connection, tableName)) {
-//				createPersonTable(connection, tableName);
-//			}
+			if (!hasExistsTable(connection, tableName)) {
+				System.out.println("nen");
+				createPersonTable(connection, tableName);
+			}
+			System.out.println("ned");
 		} catch (SQLException e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 	
 	private boolean hasExistsTable(Connection connection, String tableName) throws SQLException {
 		
 		DatabaseMetaData metaData = connection.getMetaData();
-		ResultSet resultSet = metaData.getTables(null, null, tableName, null);
+		ResultSet resultSet = metaData.getTables(null, null, "PERSON", null);
 		
 		while (resultSet.next()) {
-			if (resultSet.getString("table_name").equals(tableName)) return true;
+			if (resultSet.getString("TABLE_NAME").equals(tableName)) {
+				return true;
+			}
 		}
 		return false;	
-	}
+	} 
 	
 	private void createPersonTable(Connection connection, String tableName) throws SQLException {
 		PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE " + tableName + 
 				"(id INT, firstName VARCHAR(50), middleName VARCHAR(50), lastName VARCHAR(50), position VARCHAR(50))");
+		preparedStatement.execute();
 		System.out.println("Таблица создана");
 	}
 }
