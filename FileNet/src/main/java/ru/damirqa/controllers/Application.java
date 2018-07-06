@@ -2,6 +2,7 @@ package ru.damirqa.controllers;
 
 import ru.damirqa.factory.DocumentTypes;
 import ru.damirqa.factory.Factory;
+import ru.damirqa.service.DataBaseService;
 import ru.damirqa.service.EmployeesWrapJAXB;
 import ru.damirqa.storage.Employees;
 import ru.damirqa.storage.Repository;
@@ -17,6 +18,8 @@ public class Application extends javax.ws.rs.core.Application {
 	public Application() {
 		
 		Employees.setListOfEmployees(new File("C:\\Users\\kacer\\Desktop\\emp.xml"), EmployeesWrapJAXB.class);
+		
+		new DataBaseService();
 		
 		Factory factory = new Factory();
 		
