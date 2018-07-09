@@ -19,7 +19,7 @@ public class Runner {
 		/**
 		 * Получаем список персон из emp.xml и сохраняем в список Employees.list
 		 */
-		Employees.setListOfEmployees(new File("C:\\Users\\kacer\\Desktop\\emp.xml"), EmployeesWrapJAXB.class);
+		Employees.setListOfEmployees(new File(Thread.currentThread().getContextClassLoader().getResource("emp.xml").getFile()), EmployeesWrapJAXB.class);
 				
 		/**
 		 * Создаем фабрику
