@@ -3,6 +3,7 @@ package ru.damirqa.controllers;
 import ru.damirqa.factory.DocumentTypes;
 import ru.damirqa.factory.Factory;
 import ru.damirqa.service.jaxb.EmployeesWrapJAXB;
+import ru.damirqa.service.DataBaseService;
 import ru.damirqa.storage.Employees;
 import ru.damirqa.storage.Repository;
 
@@ -23,11 +24,13 @@ public class Application extends javax.ws.rs.core.Application {
 		 * Получаем список персон из emp.xml и сохраняем в список Employees.list
 		 */
 		Employees.setListOfEmployees(new File(Thread.currentThread().getContextClassLoader().getResource("emp.xml").getFile()), EmployeesWrapJAXB.class);
-		
+	
+		new DataBaseService();
+	
 		/**
 		 * Создаем фабрику
 		 */
-		Factory factory = new Factory();
+    Factory factory = new Factory();
 		
 		/**
 		 * Генерируем рандомное количество документов
