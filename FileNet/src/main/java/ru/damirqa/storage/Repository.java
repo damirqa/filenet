@@ -12,6 +12,9 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ * Класс описывает хранение документов и формирование отчета
+ */
 public class Repository {
 
 	private static Logger logger = LoggerFactory.getLogger(Repository.class);

@@ -11,7 +11,7 @@ import ru.damirqa.storage.Employees;
  */
 public class OutgoingGenerator extends Generator{
 	
-	/*
+	/**
 	 * Создаем документ
 	 */
 	protected Document create(int registrationNumber) {

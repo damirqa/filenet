@@ -4,7 +4,7 @@ import java.util.Date;
 
 import ru.damirqa.model.staff.Person;
 
-/*
+/**
  * Класс "Документ"
  */
 public abstract class Document implements Comparable<Document> {
@@ -17,7 +17,7 @@ public abstract class Document implements Comparable<Document> {
 	private Date dateRegistration; // Дата регистрации документа
 	private Person author; // Автор документа
 
-	/*
+	/**
 	 * Метод для сравнения документов по полям dateRegistration и registrationNumber
 	 */
 	public int compareTo(Document document) {
@@ -46,7 +46,7 @@ public abstract class Document implements Comparable<Document> {
 		return counter;
 	}
 	
-	/*
+	/**
 	 * Счетчик документов
 	 */
 	public void setCounter() {

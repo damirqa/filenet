@@ -17,6 +17,9 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.Map.Entry;
 
+/**
+ * Класс описывает работу перевода данных в json-обхъект
+ */
 public class ReportJSON {
 
 	private static Logger logger = LoggerFactory.getLogger(ReportJSON.class);

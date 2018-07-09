@@ -1,5 +1,8 @@
 package ru.damirqa.model.staff;
 
+/**
+ * Класс описывает Подразделение
+ */
 public class Department extends Staff{
 
 	private String fullName; // Полное наименование

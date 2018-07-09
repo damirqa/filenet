@@ -8,7 +8,7 @@ import ru.damirqa.storage.Employees;
 
 public class TaskGenerator extends Generator{
 
-	/*
+	/**
 	 * Создаем документ
 	 */
 	@Override

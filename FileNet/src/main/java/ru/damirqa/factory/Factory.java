@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import ru.damirqa.exceptions.DocumentExistsException;
 
-/*
+/**
  * Класс Фабрика
  */
 public class Factory {
@@ -14,7 +14,7 @@ public class Factory {
 	
 	private static Logger logger = LoggerFactory.getLogger(Factory.class);
 
-	/*
+	/**
 	 * generator создает документ
 	 */
 	public void createDocument(DocumentTypes type) {

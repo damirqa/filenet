@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 
 import ru.damirqa.model.documents.Document;
 import ru.damirqa.model.staff.Person;
-import ru.damirqa.service.AuthorDocumentsWrapJAXB;
+import ru.damirqa.service.jaxb.AuthorDocumentsWrapJAXB;
 import ru.damirqa.storage.Employees;
 import ru.damirqa.storage.Repository;
 import ru.damirqa.utils.ParserJAXB;
@@ -18,9 +18,15 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * Класс описывает какие данные будут возвращены
+ */
 @Path("/ecm")
 public class EmployeesController {
 
+	/**
+	 * Метод возвращает список персон в json-объекте
+	 */
 	@Path("/employees")
 	@GET
 	@Produces("application/json")
@@ -28,6 +34,9 @@ public class EmployeesController {
 		return new Gson().toJson(Employees.list);
 	}
 	
+	/**
+	 * Метод воззвращает список документов автора
+	 */
 	@Path("/employees/{id}")
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
