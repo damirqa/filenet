@@ -6,12 +6,12 @@ import ru.damirqa.model.documents.Document;
 import ru.damirqa.model.documents.Incoming;
 import ru.damirqa.storage.Employees;
 
-/*
+/**
  * Генератор входящих документов
  */
 public class IncomingGenerator extends Generator{
 	
-	/*
+	/**
 	 * Создаем документ
 	 */
 	protected Document create(int registrationNumber) {

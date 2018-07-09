@@ -2,6 +2,9 @@ package ru.damirqa.model.staff;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Класс описывает персону
+ */
 @XmlRootElement(name = "Person")
 public class Person extends Staff implements Comparable<Person>{
 

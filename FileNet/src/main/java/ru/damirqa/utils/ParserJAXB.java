@@ -11,6 +11,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+/**
+ * Класс описывает работру парсера JAXB
+ */
 public class ParserJAXB {
 	
 	private static Logger logger = LoggerFactory.getLogger(ParserJAXB.class);

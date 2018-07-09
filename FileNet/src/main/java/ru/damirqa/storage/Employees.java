@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ru.damirqa.model.staff.Person;
-import ru.damirqa.service.EmployeesWrapJAXB;
+import ru.damirqa.service.jaxb.EmployeesWrapJAXB;
 import ru.damirqa.utils.ParserJAXB;
 
 import java.io.File;
@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 import javax.xml.bind.JAXBException;
 
+/**
+ * Класс описывает хранение персоны
+ */
 public class Employees {
 	
 	private static Logger logger = LoggerFactory.getLogger(Employees.class);
