@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import ru.damirqa.model.staff.Person;
+import ru.damirqa.service.jaxb.EmployeesWrapJAXB;
 import ru.damirqa.storage.Employees;
 
 public class DataBaseService {
@@ -73,7 +74,7 @@ public class DataBaseService {
 	
 	private void insertPersonDataToTable(Connection connection) throws SQLException {
 		
-		Employees.setListOfEmployees(new File("C:\\Users\\kacer\\Desktop\\emp.xml"), EmployeesWrapJAXB.class);
+		Employees.setListOfEmployees(new File(Thread.currentThread().getContextClassLoader().getResource("emp.xml").getFile()), EmployeesWrapJAXB.class);
 		
 		String query = "INSERT INTO PERSON(id, firstName, middleName, lastName) VALUES(?, ?, ?, ?)";
 		
