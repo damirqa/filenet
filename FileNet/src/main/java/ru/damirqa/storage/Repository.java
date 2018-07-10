@@ -12,6 +12,9 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+/**
+ * Класс описывает хранение документов и формирование отчета
+ */
 public class Repository {
 
 	private static Logger logger = LoggerFactory.getLogger(Repository.class);
@@ -19,12 +22,11 @@ public class Repository {
 	public static SortedSet<Document> STORAGE = new TreeSet<Document>();
 	
 	public static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
-
 	
-	/*
+	/**
 	 * Формируем отчет
 	 */
-	private static void formReport() {
+	public static void formReport() {
 				
 		for (Document document : STORAGE) {
 			if (!report.containsKey(document.getAuthor())) {
@@ -34,7 +36,7 @@ public class Repository {
 		}
 	}
 	
-	/*
+	/**
 	 * Выводим отчет
 	 */  
 	public static void printReport() {

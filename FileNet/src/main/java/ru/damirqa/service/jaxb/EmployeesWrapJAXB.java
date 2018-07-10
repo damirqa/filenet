@@ -1,4 +1,4 @@
-package ru.damirqa.service;
+package ru.damirqa.service.jaxb;
 
 import ru.damirqa.model.staff.Person;
 
@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Класс описывает обертку для создания объектов из xml
+ */
 @XmlRootElement(name = "Employees")
 public class EmployeesWrapJAXB {
 	

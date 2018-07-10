@@ -4,7 +4,7 @@ import java.util.Date;
 
 import ru.damirqa.model.staff.Person;
 
-/*
+/**
  * Класс Исходящий документ
  */
 public class Outgoing extends Document{
