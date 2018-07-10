@@ -1,5 +1,8 @@
 package ru.damirqa.model.staff;
 
+/**
+ * Класс описывает организационную струкруту
+ */
 public class Organization extends Staff{
 
 	private String fullName; // Полное наименование

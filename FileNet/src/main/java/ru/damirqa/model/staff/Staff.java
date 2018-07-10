@@ -1,5 +1,8 @@
 package ru.damirqa.model.staff;
 
+/**
+ * Класс описывает организационную структуру
+ */
 public abstract class Staff {
 	
 	private int id;

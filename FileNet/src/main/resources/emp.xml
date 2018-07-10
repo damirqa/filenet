@@ -1,0 +1,72 @@
+<Employees>
+<Person>
+	<id>1</id>
+	<firstName>Парфен</firstName>
+	<middleName>Мирославович</middleName>
+	<lastName>Рыжков</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>2</id>
+	<firstName>Станислав</firstName>
+	<middleName>Епифанович</middleName>
+	<lastName>Якимовский</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>3</id>
+	<firstName>Маргарита</firstName>
+	<middleName>Никитевна</middleName>
+	<lastName>Чумакова</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>4</id>
+	<firstName>Соломон</firstName>
+	<middleName>Валерьянович</middleName>
+	<lastName>Разудалов</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>5</id>
+	<firstName>Юлий</firstName>
+	<middleName>Ипатович</middleName>
+	<lastName>Чечёткин</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>6</id>
+	<firstName>Григорий</firstName>
+	<middleName>Сократович</middleName>
+	<lastName>Янушкевич</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>7</id>
+	<firstName>Всеслава</firstName>
+	<middleName>Святославовна</middleName>
+	<lastName>Солодскиха</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>8</id>
+	<firstName>Семён</firstName>
+	<middleName>Несторович</middleName>
+	<lastName>Кривков</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>9</id>
+	<firstName>Кира</firstName>
+	<middleName>Казимировна</middleName>
+	<lastName>Дыховичный</lastName>
+	<position>Практикант</position>
+</Person>
+<Person>
+	<id>10</id>
+	<firstName>Изольда</firstName>
+	<middleName>Германовна</middleName>
+	<lastName>Кузьмина</lastName>
+	<position>Практикант</position>
+</Person>
+</Employees>
