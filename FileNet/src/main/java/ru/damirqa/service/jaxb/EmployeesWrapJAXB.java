@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Класс описывает оболочку для персон
+ * Класс описывает обертку для создания объектов из xml
  */
 @XmlRootElement(name = "Employees")
 public class EmployeesWrapJAXB {
