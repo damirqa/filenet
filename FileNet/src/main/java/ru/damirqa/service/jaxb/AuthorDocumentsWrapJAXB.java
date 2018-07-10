@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Класс описывает обвертку для документов для автора
+ * Класс описывает обертку для создания объектов из xml
  */
 @XmlRootElement(name = "employee")
 public class AuthorDocumentsWrapJAXB {

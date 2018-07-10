@@ -6,6 +6,9 @@ import ru.damirqa.model.documents.Document;
 import ru.damirqa.model.documents.Task;
 import ru.damirqa.storage.Employees;
 
+/**
+ * Генератор поручений
+ */
 public class TaskGenerator extends Generator{
 
 	/**

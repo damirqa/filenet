@@ -19,7 +19,7 @@ import java.util.SortedSet;
 import java.util.Map.Entry;
 
 /**
- * Класс описывает работу перевода данных в json-обхъект
+ * Класс описывает работу перевода данных в json-объекты
  */
 public class ReportJSON {
 

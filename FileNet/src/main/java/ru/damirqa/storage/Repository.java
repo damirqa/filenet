@@ -23,7 +23,7 @@ public class Repository {
 	
 	public static SortedMap<Person, SortedSet<Document>> report = new TreeMap<Person, SortedSet<Document>>();
 	
-	/*
+	/**
 	 * Формируем отчет
 	 */
 	public static void formReport() {
@@ -36,7 +36,7 @@ public class Repository {
 		}
 	}
 	
-	/*
+	/**
 	 * Выводим отчет
 	 */  
 	public static void printReport() {

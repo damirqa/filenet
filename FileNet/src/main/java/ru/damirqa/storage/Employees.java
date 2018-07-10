@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import javax.xml.bind.JAXBException;
 
 /**
- * Класс описывает хранение персоны
+ * Класс описывает хранение список person
  */
 public class Employees {
 	
