@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/main/webapp/views/authorDocuments.jsp=UTF-8
 encoding//src/main/webapp/views/authors.jsp=UTF-8
+encoding//src/main/webapp/views/document.jsp=UTF-8
