@@ -6,3 +6,19 @@ table {
 td, th {
 	border: 1px solid black;
 }
+
+th {
+	background-color: #84aced;
+}
+
+tr:NTH-CHILD(odd) {
+	background-color: #82f2a4;
+}
+
+tr:NTH-CHILD(even) {
+	background-color: #b7f7ca;
+}
+
+tr:HOVER {
+	background-color: white;
+}
